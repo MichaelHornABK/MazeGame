@@ -25,7 +25,6 @@ void Game::RunGameLoop()
 		Update(false);
 		// Draw
 		Draw();
-		int  test;
 		// Update with input
 		isGameOver = Update();
 	}
