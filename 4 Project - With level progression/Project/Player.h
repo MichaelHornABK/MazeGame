@@ -17,6 +17,7 @@ public:
 
 	void AddMoney(int money) { m_money += money; }
 	int GetMoney() { return m_money; }
+	void AddHP(int health) { m_lives += health; }
 
 	int GetLives() { return m_lives; }
 	void DecrementLives() { m_lives--; }

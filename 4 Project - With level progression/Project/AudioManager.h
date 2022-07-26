@@ -77,6 +77,16 @@ public:
 		Beep(1568, 50);
 	}
 
+	void PlayHPSound()
+	{
+		if (!m_SoundOn)
+			return;
+		Beep(1568, 50);
+		Beep(1568, 50);
+		Beep(1568, 50);
+		Beep(1568, 200);
+	}
+
 	void PlayLoseLivesSound()
 	{
 		if (!m_SoundOn)
