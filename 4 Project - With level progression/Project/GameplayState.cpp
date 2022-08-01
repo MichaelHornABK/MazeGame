@@ -231,6 +231,8 @@ void GameplayState::HandleCollision(int newPlayerX, int newPlayerY)
 			AudioManager::GetInstance()->PlayHPSound();
 			collidedHP->Remove();
 			m_player.AddHP(collidedHP->GetHealthIncrease());
+			//This breakpoint was to help me see if the player collision with the healing potion is working.
+			//Also from looking at the local variables, I can see that the healing potion worked by incrementing the player's lives.
 			m_player.SetPosition(newPlayerX, newPlayerY);
 			break;
 		}
