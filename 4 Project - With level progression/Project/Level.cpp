@@ -115,6 +115,8 @@ bool Level::IsWall(int x, int y)
 
 bool Level::ConvertLevel(int* playerX, int* playerY)
 {
+	//Remove magic number that was originally in the healing potion constructor
+	int healingPotionAmount = 1;
 	bool anyWarnings = false;
 	for (int y = 0; y < m_height; ++y)
 	{
@@ -154,7 +156,7 @@ bool Level::ConvertLevel(int* playerX, int* playerY)
 				break;
 			case '^':
 				m_pLevelData[index] = ' ';
-				m_pActors.push_back(new HealingPotion(x, y, 1, ActorColor::Green));
+				m_pActors.push_back(new HealingPotion(x, y, healingPotionAmount, ActorColor::Green));
 				break;
 			case 'X':
 				m_pLevelData[index] = ' ';
