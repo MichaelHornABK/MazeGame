@@ -26,7 +26,7 @@ void Game::RunGameLoop()
 		// Draw
 		Draw();
 		// Update with input
-		isGameOver = Update();
+		isGameOver = ProcessInput();
 	}
 
 	Draw();
@@ -41,6 +41,11 @@ void Game::Deinitialize()
 bool Game::Update(bool processInput)
 {
 	return m_pStateMachine->UpdateCurrentState(processInput);
+}
+
+bool Game::ProcessInput()
+{
+	return m_pStateMachine->ProcessInput();
 }
 
 void Game::Draw()

@@ -24,6 +24,7 @@ public:
 
 	virtual ActorType GetType() override { return ActorType::Player; }
 	virtual void Draw() override;
+	void HandleCollision(PlacableActor* player, bool* isGameDone) override;
 private:
 	Key* m_pCurrentKey;
 	int m_money;

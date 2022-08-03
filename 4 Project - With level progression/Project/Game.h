@@ -11,6 +11,7 @@ public:
 	void Initialize(GameStateMachine* pStateMachine);
 	void RunGameLoop();
 	void Deinitialize();
+	bool ProcessInput();
 
 private:
 	bool Update(bool processInput = true);

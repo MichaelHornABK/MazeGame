@@ -11,3 +11,11 @@ void Goal::Draw()
 {
 	std::cout << "X";
 }
+
+void Goal::HandleCollision(PlacableActor* player, bool* isGameDone)
+{
+	Player* collidedPlayer = dynamic_cast<Player*>(player);
+	this->Remove();
+	collidedPlayer->SetPosition(this->GetXPosition(), this->GetYPosition());
+	*isGameDone = true;
+}

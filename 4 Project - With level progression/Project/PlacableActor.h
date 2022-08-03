@@ -40,6 +40,7 @@ public:
 	void Remove() { m_IsActive = false; }
 	bool IsActive() { return m_IsActive; }
 	void Place(int x, int y);
+	virtual void HandleCollision(PlacableActor* player, bool* isGameDone) = 0;
 
 	virtual ActorType GetType() = 0;
 	virtual void Draw() = 0;

@@ -36,6 +36,22 @@ bool StateMachineExampleGame::UpdateCurrentState(bool processInput)
 	return done;
 }
 
+bool StateMachineExampleGame::ProcessInput()
+{
+	bool done = false;
+	if (m_pNextState != nullptr)
+	{
+		ChangeState(m_pNextState);
+		m_pNextState = nullptr;
+	}
+
+	if (m_pCurrentState != nullptr)
+	{
+		done = m_pCurrentState->Update(true);
+	}
+	return done;
+}
+
 void StateMachineExampleGame::DrawCurrentState()
 {
 	if (m_pCurrentState != nullptr)

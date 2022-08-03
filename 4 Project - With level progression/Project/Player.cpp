@@ -55,3 +55,8 @@ void Player::Draw()
 {
 	cout << "@";
 }
+
+void Player::HandleCollision(PlacableActor* player, bool* isGameDone)
+{
+
+}
