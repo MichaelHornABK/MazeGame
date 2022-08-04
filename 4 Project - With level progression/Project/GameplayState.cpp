@@ -157,7 +157,18 @@ bool GameplayState::Update(bool processInput)
 
 void GameplayState::UpdateActors()
 {
-	m_pLevel->UpdateActorsWithoutInput();
+	PlacableActor* collidedActor = m_pLevel->UpdateActorsWithoutInput(&m_player);
+	if (collidedActor)
+	{
+		assert(collidedActor);
+		collidedActor->HandleCollision(&m_player, &m_didBeatLevel);
+		if (m_player.GetLives() < 0)
+		{
+			//TODO: Go to game over screen
+			AudioManager::GetInstance()->PlayLoseSound();
+			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Lose);
+		}
+	}
 }
 
 //TODO: refactor

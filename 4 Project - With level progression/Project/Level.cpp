@@ -213,7 +213,6 @@ PlacableActor* Level::UpdateActors(int x, int y)
 
 	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
 	{
-		(*actor)->Update(); // Update all actors
 
 		if (!(*actor)->IsActive())
 		{
@@ -232,8 +231,10 @@ PlacableActor* Level::UpdateActors(int x, int y)
 }
 
 // Updates all actors and returns a colliding actor if there is one
-void Level::UpdateActorsWithoutInput()
+PlacableActor* Level::UpdateActorsWithoutInput(Player* player)
 {
+	PlacableActor* collidedActor = nullptr;
+
 	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
 	{
 		(*actor)->Update(); // Update all actors
@@ -243,7 +244,13 @@ void Level::UpdateActorsWithoutInput()
 			continue;
 		}
 
+		if (player->GetXPosition() == (*actor)->GetXPosition() && player->GetYPosition() == (*actor)->GetYPosition())
+		{
+			// should only be able to collide with one actor
+			assert(collidedActor == nullptr);
+			collidedActor = (*actor);
+		}
 		
 	}
-
+	return collidedActor;
 }
