@@ -13,5 +13,6 @@ public:
 	virtual void ChangeState(GameState* pNewState) = 0;
 	virtual bool Cleanup() = 0;
 	virtual bool ProcessInput() = 0;
+	virtual void UpdateActors() = 0;
 };
 

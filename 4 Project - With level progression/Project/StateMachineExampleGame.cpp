@@ -36,6 +36,14 @@ bool StateMachineExampleGame::UpdateCurrentState(bool processInput)
 	return done;
 }
 
+void StateMachineExampleGame::UpdateActors()
+{
+	if (m_pCurrentState != nullptr)
+	{
+		m_pCurrentState->UpdateActors();
+	}
+}
+
 bool StateMachineExampleGame::ProcessInput()
 {
 	bool done = false;

@@ -34,5 +34,6 @@ public:
 	void LoadScene(SceneName scene);
 	virtual bool Cleanup() override;
 	bool ProcessInput() override;
+	void UpdateActors() override;
 };
 

@@ -31,6 +31,7 @@ public:
 	virtual void Enter() override;
 	virtual bool Update(bool processInput = true) override;
 	virtual void Draw() override;
+	virtual void UpdateActors() override;
 
 protected:
 	void ProcessInput() override;

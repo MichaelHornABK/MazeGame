@@ -230,3 +230,20 @@ PlacableActor* Level::UpdateActors(int x, int y)
 
 	return collidedActor;
 }
+
+// Updates all actors and returns a colliding actor if there is one
+void Level::UpdateActorsWithoutInput()
+{
+	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
+	{
+		(*actor)->Update(); // Update all actors
+
+		if (!(*actor)->IsActive())
+		{
+			continue;
+		}
+
+		
+	}
+
+}

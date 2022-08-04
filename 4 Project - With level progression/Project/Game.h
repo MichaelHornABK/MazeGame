@@ -12,6 +12,7 @@ public:
 	void RunGameLoop();
 	void Deinitialize();
 	bool ProcessInput();
+	void UpdateActorsAutomatically();
 
 private:
 	bool Update(bool processInput = true);

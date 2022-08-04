@@ -154,6 +154,12 @@ bool GameplayState::Update(bool processInput)
 	
 	return false;
 }
+
+void GameplayState::UpdateActors()
+{
+	m_pLevel->UpdateActorsWithoutInput();
+}
+
 //TODO: refactor
 void GameplayState::HandleCollision(int newPlayerX, int newPlayerY)
 {

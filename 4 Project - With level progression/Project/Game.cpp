@@ -32,6 +32,12 @@ void Game::RunGameLoop()
 	Draw();
 }
 
+void Game::UpdateActorsAutomatically()
+{
+	m_pStateMachine->UpdateActors();
+	Draw();
+}
+
 void Game::Deinitialize()
 {
 	if (m_pStateMachine != nullptr)

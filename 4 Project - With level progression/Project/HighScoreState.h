@@ -17,5 +17,6 @@ public:
 	virtual bool Update(bool processInput = true) override;
 	void ProcessInput() override;
 	virtual void Draw() override;
+	void UpdateActors() override {}
 };
 

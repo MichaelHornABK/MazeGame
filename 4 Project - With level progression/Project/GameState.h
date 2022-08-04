@@ -10,4 +10,5 @@ public:
 	virtual void ProcessInput() {};
 	virtual void Draw() = 0;
 	virtual void Exit() {}
+	virtual void UpdateActors() = 0;
 };

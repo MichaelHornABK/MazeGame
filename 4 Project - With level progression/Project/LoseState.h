@@ -13,6 +13,7 @@ public:
 
 	virtual bool Update(bool processInput = true) override;
 	virtual void Draw() override;
+	void UpdateActors() override {}
 };
 
 
